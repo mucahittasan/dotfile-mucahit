@@ -1,4 +1,4 @@
-local discipline = require("craftzdog.discipline")
+local discipline = require("devtasan.discipline")
 
 discipline.cowboy()
 
@@ -29,6 +29,11 @@ keymap.set("n", "dw", 'vb"_d')
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+
+keymap.set("i", "jj", "<ESC>", opts)
+keymap.set("i", "jk", "<ESC>", opts)
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
@@ -64,13 +69,13 @@ keymap.set("n", "<C-j>", function()
 end, opts)
 
 keymap.set("n", "<leader>r", function()
-	require("craftzdog.hsl").replaceHexWithHSL()
+	require("devtasan.hsl").replaceHexWithHSL()
 end)
 
 keymap.set("n", "<leader>i", function()
-	require("craftzdog.lsp").toggleInlayHints()
+	require("devtasan.lsp").toggleInlayHints()
 end)
 
 vim.api.nvim_create_user_command("ToggleAutoformat", function()
-	require("craftzdog.lsp").toggleAutoformat()
+	require("devtasan.lsp").toggleAutoformat()
 end, {})
