@@ -39,6 +39,14 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
 
+-- Disable comment leader insertion for CSS/SCSS (they don't use * for comments)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "css", "scss", "less", "sass" },
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "r" })
+	end,
+})
+
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
 
@@ -56,3 +64,7 @@ vim.filetype.add({
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_picker = "telescope"
 vim.g.lazyvim_cmp = "blink.cmp"
+
+-- Cursor style and color (no blink)
+-- Block cursor in normal mode, line cursor in insert mode
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:Cursor/lCursor,sm:block"

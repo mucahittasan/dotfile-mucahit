@@ -21,6 +21,16 @@ return {
 				"scss",
 				"sql",
 				"svelte",
+				"javascript",
+				"typescript",
+				"tsx",
+				"json",
+				"lua",
+			},
+
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = false,
 			},
 
 			-- matchup = {
@@ -54,8 +64,9 @@ return {
 			},
 		},
 		config = function(_, opts)
-			local TS = require("nvim-treesitter")
-			TS.setup(opts)
+			-- use the official configs module
+			local configs = require("nvim-treesitter.configs")
+			configs.setup(opts)
 
 			-- MDX
 			vim.filetype.add({

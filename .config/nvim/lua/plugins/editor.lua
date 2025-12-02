@@ -249,4 +249,22 @@ return {
 			},
 		},
 	},
+
+	-- Fix CSS * selector auto-pairing issue
+	{
+		"echasnovski/mini.pairs",
+		opts = function(_, opts)
+			-- Disable * auto-pairing in CSS files
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "css", "scss", "less" },
+				callback = function()
+					local pairs = require("mini.pairs")
+					-- Remove * pairing in CSS
+					pairs.map_buf(0, "i", "*", "")
+				end,
+			})
+
+			return opts
+		end,
+	},
 }

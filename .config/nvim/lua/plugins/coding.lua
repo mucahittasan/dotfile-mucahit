@@ -1,4 +1,13 @@
 return {
+	-- Disable autocomplete popup (only show on Ctrl+Space)
+	{
+		"hrsh7th/nvim-cmp",
+		opts = function(_, opts)
+			opts.completion = opts.completion or {}
+			opts.completion.autocomplete = false -- Disable auto popup
+		end,
+	},
+
 	-- Incremental rename
 	{
 		"smjonas/inc-rename.nvim",

@@ -1,12 +1,12 @@
 local wezterm = require("wezterm")
 local config = {}
 
-config.font_size = 22.0
+config.font_size = 20.0
 config.font = wezterm.font("JetBrains Mono")
 config.freetype_load_target = "Light"
 
-config.initial_cols = 135
-config.initial_rows = 32
+config.initial_cols = 140
+config.initial_rows = 37
 
 config.max_fps = 120
 config.animation_fps = 120
@@ -42,7 +42,7 @@ config.adjust_window_size_when_changing_font_size = false
 config.enable_tab_bar = false
 
 config.macos_window_background_blur = 20
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.9
 
 config.window_decorations = "RESIZE"
 
