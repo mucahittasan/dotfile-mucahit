@@ -1,12 +1,12 @@
 local wezterm = require("wezterm")
 local config = {}
 
-config.font_size = 20.0
+config.font_size = 22.0
 config.font = wezterm.font("JetBrains Mono")
 config.freetype_load_target = "Light"
 
-config.initial_cols = 140
-config.initial_rows = 37
+config.initial_cols = 96
+config.initial_rows = 27
 
 config.max_fps = 120
 config.animation_fps = 120

@@ -33,11 +33,6 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 
-			-- matchup = {
-			-- 	enable = true,
-			-- },
-
-			-- https://github.com/nvim-treesitter/playground#query-linter
 			query_linter = {
 				enable = true,
 				use_virtual_text = true,
@@ -47,8 +42,8 @@ return {
 			playground = {
 				enable = true,
 				disable = {},
-				updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-				persist_queries = true, -- Whether the query persists across vim sessions
+				updatetime = 25,
+				persist_queries = true,
 				keybindings = {
 					toggle_query_editor = "o",
 					toggle_hl_groups = "i",
@@ -63,12 +58,12 @@ return {
 				},
 			},
 		},
-		config = function(_, opts)
-			-- use the official configs module
-			local configs = require("nvim-treesitter.configs")
-			configs.setup(opts)
+	},
 
-			-- MDX
+	-- MDX support
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
 			vim.filetype.add({
 				extension = {
 					mdx = "mdx",

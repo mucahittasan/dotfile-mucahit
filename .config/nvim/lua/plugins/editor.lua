@@ -252,7 +252,7 @@ return {
 
 	-- Fix CSS * selector auto-pairing issue
 	{
-		"echasnovski/mini.pairs",
+		"nvim-mini/mini.pairs",
 		opts = function(_, opts)
 			-- Disable * auto-pairing in CSS files
 			vim.api.nvim_create_autocmd("FileType", {

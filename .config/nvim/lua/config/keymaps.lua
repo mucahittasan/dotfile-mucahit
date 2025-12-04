@@ -76,6 +76,16 @@ keymap.set("n", "<leader>i", function()
 	require("devtasan.lsp").toggleInlayHints()
 end)
 
+-- Copilot Chat keymaps
+-- Main chat window: <leader>ac
+-- Quick chat (visual): <leader>aq
+-- Explain: <leader>ae
+-- Fix: <leader>af
+-- Optimize: <leader>ao
+-- Document: <leader>ad
+-- Refactor: <leader>ar
+-- Tests: <leader>at
+
 vim.api.nvim_create_user_command("ToggleAutoformat", function()
 	require("devtasan.lsp").toggleAutoformat()
 end, {})
